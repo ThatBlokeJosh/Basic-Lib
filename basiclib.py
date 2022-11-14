@@ -125,3 +125,36 @@ def encrypt(message, key):
         else:
             new_message += letter
     return new_message
+
+# Decryption
+def decrypt(message, key):
+    new_message = ""
+    for letter in message:
+        if letter in lower_alfabet:
+            index = lower_alfabet.index(letter)
+            new_message += lower_alfabet[(index - key) % 26]
+        elif letter in uper_alfabet:
+            index = uper_alfabet.index(letter)
+            new_message += uper_alfabet[(index - key) % 26]
+        else:
+            new_message += letter
+    return new_message
+
+# File content writer
+def write(message, filename, mode):
+    with open(f"./{filename}", mode) as f:
+        f.write(message)
+# File content remover
+def remove(message, filename):
+    with open(f"./{filename}", "r") as f:
+        list = []
+        content = f.read()
+        for i in content.splitlines():
+            list.append(i)
+    if message in list:        
+        list.remove(message)
+    else:
+        print("Invalid message argument")
+    with open(filename, "w") as f:
+        for i in list:
+            f.write(i  + "\n")
