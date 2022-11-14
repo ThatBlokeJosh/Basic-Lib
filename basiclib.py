@@ -1,7 +1,14 @@
+# Random
 import random
-def rand(range):
-    return random.randint(1, range)
+def rand(start, end):
+    return random.randint(start, end)
 
+# Fun functions
+def hello():
+    print("Hello, world!")
+
+
+# Lists
 def symbols():
     symbols = "!@#$%^&*()_+-=<>?/.,;:[]{}|"
     return symbols
@@ -21,6 +28,7 @@ def cap_letters():
 lower_alfabet = letters()
 uper_alfabet = cap_letters()
 
+# Changing the message
 def upper(message):
     new_message = ""
     for letter in message:
@@ -56,6 +64,7 @@ def title(message):
         new_message += message
     return new_message
 
+# Indexing
 def letter_id(message):
     new_message = ""
     for letter in message:
@@ -76,6 +85,7 @@ def index(list, message):
         else:
             num += 1
 
+# Formating
 def format(list):
     formated = []
 
