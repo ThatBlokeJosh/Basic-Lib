@@ -85,7 +85,7 @@ def index(list, message):
         else:
             num += 1
 
-# Formating
+# Formatting
 def format(list):
     formated = []
 
@@ -112,3 +112,16 @@ def format_list(list):
         message += i
     return message
 
+# Encryption
+def encrypt(message, key):
+    new_message = ""
+    for letter in message:
+        if letter in lower_alfabet:
+            index = lower_alfabet.index(letter)
+            new_message += lower_alfabet[(index + key) % 26]
+        elif letter in uper_alfabet:
+            index = uper_alfabet.index(letter)
+            new_message += uper_alfabet[(index + key) % 26]
+        else:
+            new_message += letter
+    return new_message
